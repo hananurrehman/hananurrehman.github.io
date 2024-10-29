@@ -1,68 +1,69 @@
 ---
-import Footer from '../components/footer.astro';
-import Header from '../components/header.astro';
-import '../styles/global.css'
-const pageTitle = "About Me"
-const identity = {
-  firstName: "Hanan",
-  country: "Germany",
-  occupation: "Software Tester",
-  hobbies: ["photography", "formula 1", "food"],
-};
-const skills = ["Automation", "Exploratory Testing", "API Testing"];
-const happy = true;
-const finished = false;
-const goal = 3;
-const skillColor = "green";
-
+import experiences from "../collections/experiences.json";
+import AboutExperience from "../components/about-experience.astro";
+import PageHeading from "../components/page-heading.astro";
+import Layout from "../layouts/main.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-        <style define:vars={{skillColor}}>
-            h1 {
-              color: purple;
-              font-size: 4rem;
-            }
-            .skill {
-            color: var(--skillColor);
-            font-weight: bold;
-            }
-          </style>
-	</head>
+<Layout title="About Me">
+  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+    <PageHeading
+      title="About Me"
+      description="I identify as an investigative analytical thinker who likes to challange the norms and doubt the (not so)obvious."
+    />
+    <img src="/assets/images/about-1.jpg" class="relative z-30 w-full my-10 rounded-xl" />
 
-	<body>
-        <Header/>
-        <h1>{pageTitle}</h1>
-        <h2>... and my new Astro site!</h2>
-      
-        <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
-      
-        <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
-        <p>Here are a few facts about me:</p>
-        <ul>
-          <li>My name is {identity.firstName}.</li>
-          <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-          {identity.hobbies.length >= 2 &&
-            <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-          }
-        </ul>
-        <p>My skills are:</p>
-        <ul>
-          {skills.map((skill) => <li class="skill">{skill}</li>)}
-        </ul>
+    <h2 class="mb-2 text-2xl font-bold dark:text-neutral-200">In a nutshell</h2>
+    <p
+      class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
+    >
+      Bug hunter 🐞 | Heavy thinker 💭 | Home Chef 👨🏻‍🍳 | Motosports Enthusiast 🏁 
+    </p>
 
-        {happy && <p>I am happy to be learning Astro!</p>}
-        {finished && <p>I finished this tutorial!</p>}
-        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-        <Footer/>
-        <script>
-          import "../scripts/menu.js";
-          </script>
-    </body>
-</html>
+    <h2
+      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
+    >
+      Experience
+    </h2>
+    <div class="px-5 py-10">
+      {
+        experiences.map((experience, loop) => {
+          return (
+            <>
+              {loop == 0 || loop == 1 ? (
+                <div class="pb-10 border-l border-gray-200 dark:border-neutral-700">
+                  <AboutExperience
+                    dates={experience.dates}
+                    role={experience.role}
+                    company={experience.company}
+                    description={experience.description}
+                    logo={experience.logo}
+                  />
+                </div>
+              ) : (
+                <AboutExperience
+                  dates={experience.dates}
+                  role={experience.role}
+                  company={experience.company}
+                  description={experience.description}
+                  logo={experience.logo}
+                />
+              )}
+            </>
+          )
+        })
+      }
+    </div>
+
+    <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">Let's Connect</h2>
+    <p
+      class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
+    > Interested in discussing anything testing? <br>
+      <!-- Drop me an <a href="mailto:astro-aria#miantiao.me" class="text-indigo-600 underline"
+        >Email</a
+      > or --> Just drop me a DM on <a href="https://www.linkedin.com/in/hananurrehman/" class="text-indigo-600 underline">LinkedIn</a>. 
+      Otherwise I can be also be found sharing wisdom on <a href="https://club.ministryoftesting.com/" class="text-indigo-600 underline">Ministry of testing</a>.
+      I'll be delighted to help you out.
+    </p>
+  </section>
+</Layout>

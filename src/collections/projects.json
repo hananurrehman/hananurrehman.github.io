@@ -1,0 +1,20 @@
+[
+	{
+		"name": "Data Masking Demo",
+		"description": "A data masking demo project showcasing how to fetch and mask sensitive data from a Mongo DB collection using Python.",
+		"image": "/assets/images/projects/data-masking-demo.png",
+		"url": "https://github.com/hananurrehman/data-masking-demo"
+	},
+	{
+		"name": "API Test Automation with Playwright",
+		"description": "A very basic yet insightful approach to automating API tests with Playwright.",
+		"image": "/assets/images/projects/playwright-api.png",
+		"url": "https://github.com/hananurrehman/playwrightapitest"
+	},
+	{
+		"name": "Mobile App Automation with Appum & WebdriverIO",
+		"description": "A PoC like project to understand how Android automation works with Appium & WebdriverIO.",
+		"image": "/assets/images/projects/appium.png",
+		"url": "https://github.com/hananurrehman/appiumpractice"
+	}
+]

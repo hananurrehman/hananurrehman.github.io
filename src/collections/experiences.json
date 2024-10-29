@@ -1,0 +1,23 @@
+[
+	{
+		"dates": "August 2020 · Present",
+		"role": "QA Software Tester",
+		"company": "Connectavo - Wafios AG",
+		"description": "Responsible for testing the Connectavo CMMS and implementing test automation.",
+		"logo": "/assets/images/experiences/logo-circle-2fc15904938b7ebb8094505ae91ded3a432e6b336ac20a091dfb1836b77ceed1.svg"
+	},
+	{
+		"dates": "March 2020 · August 2020 ",
+		"role": "SQA Engineer",
+		"company": "Code District",
+		"description": "Responsible for testing multiple exisitng and new tech start-up products.",
+		"logo": "/assets/images/experiences/the_code_district_logo.png"
+	},
+	{
+		"dates": "July 2018 · August 2020 ",
+		"role": "SQA Engineer",
+		"company": "Techverx",
+		"description": "Junior tester and later mentor, mainly involved in testing multiple projects.",
+		"logo": "/assets/images/experiences/images.png"
+	}
+]
