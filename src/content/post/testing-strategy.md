@@ -26,6 +26,6 @@ Let me tell you what I did, I made sure I discussed with the UX guy (who also wr
 
 I also coordinated with the devs, well mainly I told them the statistics about how many bugs in a given user story could have been avoided by just rechecking the use case documentation again. The devops crowd will tell you at this point that this can be avoided by TDD and more specifically a TDD with UI automation. But honestly speaking, its a bit difficult to achieve that. We know that requirements change often times mid sprint due to time and complexity constraints, so in times like this, we need to go context driven and think on whatever there's left that we can improve individually.
 
-There's more detail on this topic and a rather very in-depth perspective offered by [Daniel Knot](https://www.linkedin.com/in/daniel-knott/) in his Youtube video series: 
+There's more detail on this topic and a rather very in-depth perspective offered by [Daniel Knott](https://www.linkedin.com/in/daniel-knott/) in his Youtube video series: 
 #### Software Testing Community Questions
 <iframe width="560" height="315" src="https://www.youtube.com/embed/p0wRtDKhqlU?si=PddrZ0IELXalZGvJ&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
