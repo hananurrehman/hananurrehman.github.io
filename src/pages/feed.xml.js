@@ -17,7 +17,7 @@ export async function GET(context) {
     description: 'Hanan`s software testing blog',
     site: context.site,
     trailingSlash: false,
-    stylesheet: 'src/pages/rss/styles.xsl',
+    stylesheet: '/rss/styles.xsl',
     items,
     customData: `<language>en-us</language>`,
   });
