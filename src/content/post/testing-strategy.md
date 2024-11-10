@@ -3,6 +3,7 @@ layout: ../../layouts/post.astro
 title: How to establish a comprehensive testing strategy as a tester in your company?
 description: When we test, we should think more than the usual bug reporting.
 dateFormatted: October 31, 2024
+pubDate: 31 October 2024 10:00:00 GMT
 ---
 
 Oftentimes when we talk about testing, it's mostly in terms of test techniques, black box testing, white box testing, api testing, manual testing, test automation etc etc. That's all important to talk about but in my opinion, we also need to look at the BIGGER picture.

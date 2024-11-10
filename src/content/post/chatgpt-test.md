@@ -3,6 +3,7 @@ layout: ../../layouts/post.astro
 title: Using Chatgpt to test a module
 description: Putting Chatgpt to test for creation of actual test data
 dateFormatted: October 10, 2023
+pubDate: 10 October 2023 10:00:00 GMT
 ---
 
 With all the brouhaha about using Chatgpt in testing and AI replacing testers, I decided to leverage a test planning session to this.
