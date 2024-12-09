@@ -14,6 +14,7 @@ playwright/
 	|---- product.page.ts
 |---- fixtures/
 	|---- index.ts
+	|---- login-fixture.ts
 |---- utils/
 	|---- constants.ts
 	|---- helpers.ts
