@@ -16,8 +16,11 @@ playwright/
 	|---- index.ts
 	|---- login-fixture.ts
 |---- constants/
-  |---- urls.ts
-  |---- strings.ts
+    |----/locators
+        |---- login.ts
+        |---- product.ts
+    |---- urls.ts
+    |---- strings.ts
 |---- utils/
 	|---- helpers.ts
 	|---- api/
