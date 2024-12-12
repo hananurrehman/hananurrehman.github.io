@@ -13,7 +13,6 @@ playwright/
 	|---- login.page.ts
 	|---- product.page.ts
 |---- fixtures/
-	|---- index.ts
 	|---- login-fixture.ts
 |---- constants/
     |----/locators
