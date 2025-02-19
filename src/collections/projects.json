@@ -1,20 +1,26 @@
 [
-	{
-		"name": "Data Masking Demo",
-		"description": "A data masking demo project showcasing how to fetch and mask sensitive data from a Mongo DB collection using Python.",
-		"image": "/assets/images/projects/data-masking-demo.png",
-		"url": "https://github.com/hananurrehman/data-masking-demo"
-	},
-	{
-		"name": "API Test Automation with Playwright",
-		"description": "A very basic yet insightful approach to automating API tests with Playwright.",
-		"image": "/assets/images/projects/playwright-api.png",
-		"url": "https://github.com/hananurrehman/playwrightapitest"
-	},
-	{
-		"name": "Mobile App Automation with Appum & WebdriverIO",
-		"description": "A PoC like project to understand how Android automation works with Appium & WebdriverIO.",
-		"image": "/assets/images/projects/appium.png",
-		"url": "https://github.com/hananurrehman/appiumpractice"
-	}
+  {
+    "name": "PIM System test automation with Playwright",
+    "description": "A set of playwright tests written for a product information management system.",
+    "image": "/assets/images/projects/pimify.png",
+    "url": "https://github.com/hananurrehman/pimify/tree/main/e2e"
+  },
+  {
+    "name": "Data Masking Demo",
+    "description": "A data masking demo project showcasing how to fetch and mask sensitive data from a Mongo DB collection using Python.",
+    "image": "/assets/images/projects/data-masking-demo.png",
+    "url": "https://github.com/hananurrehman/data-masking-demo"
+  },
+  {
+    "name": "API Test Automation with Playwright",
+    "description": "A very basic yet insightful approach to automating API tests with Playwright.",
+    "image": "/assets/images/projects/playwright-api.png",
+    "url": "https://github.com/hananurrehman/playwrightapitest"
+  },
+  {
+    "name": "Mobile App Automation with Appum & WebdriverIO",
+    "description": "A PoC like project to understand how Android automation works with Appium & WebdriverIO.",
+    "image": "/assets/images/projects/appium.png",
+    "url": "https://github.com/hananurrehman/appiumpractice"
+  }
 ]
