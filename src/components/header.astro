@@ -133,11 +133,33 @@ const currentPath = Astro.url.pathname;
     if (currentScroll > 0) {
       header.classList.remove('absolute');
       header.classList.add('fixed');
-      headerInner.classList.add('border-b', 'border-l-0', 'border-r-0', 'lg:border-r', 'lg:border-l', 'border-neutral-300/50', 'dark:border-neutral-600/40', 'bg-white/80', 'dark:bg-neutral-900/60', 'backdrop-blur-2xl');
+      headerInner.classList.add(
+        'border-b', 
+        'border-l-0', 
+        'border-r-0', 
+        'lg:border-r', 
+        'lg:border-l', 
+        'border-neutral-300/40', 
+        'dark:border-neutral-600/40', 
+        'bg-white/80', 
+        'dark:bg-neutral-900/60', 
+        'backdrop-blur-2xl'
+      );
     } else {
       header.classList.remove('fixed');
       header.classList.add('absolute');
-      headerInner.classList.remove('border-b', 'border-l-0', 'border-r-0', 'lg:border-r', 'lg:border-l', 'border-neutral-300/50', 'dark:border-neutral-600/40', 'bg-white/80', 'dark:bg-neutral-900/60', 'backdrop-blur-2xl');
+      headerInner.classList.remove(
+        'border-b', 
+        'border-l-0', 
+        'border-r-0', 
+        'lg:border-r', 
+        'lg:border-l', 
+        'border-neutral-300/40', 
+        'dark:border-neutral-600/40', 
+        'bg-white/80', 
+        'dark:bg-neutral-900/60', 
+        'backdrop-blur-2xl'
+      );
     }
     
     lastScroll = currentScroll;
