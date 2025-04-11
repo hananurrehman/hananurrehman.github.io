@@ -88,7 +88,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       })} />
     )}
 
-    <!-- Dark mode script -->
+    <!-- Used to add dark mode right away, adding here prevents any flicker -->
     <script is:inline>
       (function() {
         if (typeof Storage !== 'undefined') {
@@ -99,6 +99,45 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           }
         }
       })();
+    </script>
+
+    <!-- Dark mode toggle functionality -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function() {
+        const darkToggle = document.getElementById('darkToggle');
+        const html = document.documentElement;
+        const sun = document.getElementById('sun');
+        const moon = document.getElementById('moon');
+
+        function updateTheme(isDark) {
+          if (isDark) {
+            html.classList.add('dark');
+            sun.style.display = 'none';
+            moon.style.display = 'block';
+          } else {
+            html.classList.remove('dark');
+            sun.style.display = 'block';
+            moon.style.display = 'none';
+          }
+          localStorage.setItem('dark_mode', isDark);
+        }
+
+        // Initialize theme
+        updateTheme(html.classList.contains('dark'));
+
+        // Toggle theme on click
+        darkToggle.addEventListener('click', () => {
+          const isDark = !html.classList.contains('dark');
+          updateTheme(isDark);
+        });
+
+        // Handle system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          if (localStorage.getItem('dark_mode') === null) {
+            updateTheme(e.matches);
+          }
+        });
+      });
     </script>
 
     <style>
