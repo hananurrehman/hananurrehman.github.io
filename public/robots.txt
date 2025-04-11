@@ -1,2 +1,14 @@
+# Allow all crawlers
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: https://hananurrehman.github.io/sitemap.xml
+
+# Prevent crawling of certain paths
+Disallow: /draft/
+Disallow: /admin/
+Disallow: /api/
+
+# Crawl-delay for all bots
+Crawl-delay: 10

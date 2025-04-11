@@ -1,48 +1,63 @@
 ---
-layout: ../../layouts/post.astro
 title: Playwright ideal file structure
-description: What structure should ideally help in maintainability?
+description: Learn how to structure Playwright test automation projects using SOLID principles and best practices for maintainable, scalable test architectures.
 dateFormatted: Dec 03, 2024
 pubDate: 03 December 2024 10:00:00 GMT
+tags:
+  [
+    "Playwright",
+    "Test Automation",
+    "Software Architecture",
+    "Best Practices",
+    "TypeScript",
+  ]
+keywords:
+  [
+    "playwright structure",
+    "test automation architecture",
+    "page object model",
+    "SOLID principles",
+    "test framework design",
+  ]
+readingTime: 12
+author: "Hanan Ur Rehman"
+featured: true
+lastModified: "December 03, 2024"
 ---
-
-
-  
 
 What should an ideal playwright setup look like? We know that as we start writing test automation scripts, the code maintenance and readability becomes crucial aspect of it. Therefore I think it is important to plan and structure your suite right from the start.
 
-Here is what a decent playwright structure could look like: 
+Here is what a decent playwright structure could look like:
 
 📂 `playwright/` - Root directory of the Playwright setup  
 │── 📂 `tests/` - Contains test files  
-│   ├── 📄 `login.spec.ts` - Login page test  
-│   ├── 📄 `profile.spec.ts` - Profile page test  
-│   ├── 📄 `product.spec.ts` - Product page test  
+│ ├── 📄 `login.spec.ts` - Login page test  
+│ ├── 📄 `profile.spec.ts` - Profile page test  
+│ ├── 📄 `product.spec.ts` - Product page test  
 │  
 │── 📂 `pages/` - Page object models  
-│   ├── 📄 `base.page.ts` - Base page class  
-│   ├── 📄 `login.page.ts` - Login page interactions  
-│   ├── 📄 `product.page.ts` - Product page interactions  
+│ ├── 📄 `base.page.ts` - Base page class  
+│ ├── 📄 `login.page.ts` - Login page interactions  
+│ ├── 📄 `product.page.ts` - Product page interactions  
 │  
 │── 📂 `fixtures/` - Test fixtures  
-│   ├── 📄 `login-fixture.ts` - Login-related test fixture  
+│ ├── 📄 `login-fixture.ts` - Login-related test fixture  
 │  
 │── 📂 `constants/` - Stores constants like locators & URLs  
-│   ├── 📄 `urls.ts` - URL constants  
-│   ├── 📄 `strings.ts` - String constants  
-│   ├── 📂 `locators/` - Contains element locators  
-│   │   ├── 📄 `login.ts` - Login page locators  
-│   │   ├── 📄 `product.ts` - Product page locators  
+│ ├── 📄 `urls.ts` - URL constants  
+│ ├── 📄 `strings.ts` - String constants  
+│ ├── 📂 `locators/` - Contains element locators  
+│ │ ├── 📄 `login.ts` - Login page locators  
+│ │ ├── 📄 `product.ts` - Product page locators  
 │  
 │── 📂 `utils/` - Utility functions  
-│   ├── 📄 `helpers.ts` - General helper functions  
-│   ├── 📂 `api/` - API interaction files  
-│   │   ├── 📄 `login.api.ts` - API calls for login  
-│   │   ├── 📄 `product.api.ts` - API calls for product  
+│ ├── 📄 `helpers.ts` - General helper functions  
+│ ├── 📂 `api/` - API interaction files  
+│ │ ├── 📄 `login.api.ts` - API calls for login  
+│ │ ├── 📄 `product.api.ts` - API calls for product  
 │  
 │── 📄 `playwright.config.ts` - Playwright configuration file  
-│── 📄 `package.json` - Project dependencies & scripts  
-
+│── 📄 `package.json` - Project dependencies & scripts
 
 A dilemma here can be that you might end up with a need for too many helper functions to perform a variety of different tests. In my experience I created individual methods to fill in fields or click buttons, then used them as needed in functions to basically perform a part of a test. This led to the problem of having to manage too many helper functions since e.g. the creation forms would have lots of fields followed by detail pages of those entities created etc.
 
@@ -55,24 +70,26 @@ Well Chatgpt says I can go into the same route as mentioned above but for each m
 
 📂 `pages/`  
 │── 📂 `product/` - Contains all product-related pages  
-│   ├── 📄 `product.page.ts` - Main product page  
-│   ├── 📄 `product.detail.page.ts` - Product details page  
-│   ├── 📄 `product.create.page.ts` - Product creation page  
-│   ├── 📄 `product.list.page.ts` - Product list page  
-│   ├── 📄 `product.filter.page.ts` - Product filtering page  
+│ ├── 📄 `product.page.ts` - Main product page  
+│ ├── 📄 `product.detail.page.ts` - Product details page  
+│ ├── 📄 `product.create.page.ts` - Product creation page  
+│ ├── 📄 `product.list.page.ts` - Product list page  
+│ ├── 📄 `product.filter.page.ts` - Product filtering page
 
-This allows for better readability and easier maintenance in future. But! hold on, it's not that simple. You can't just declare some classes and use them in another one, it's not that simple. There's a principle known as SOLID. 
+This allows for better readability and easier maintenance in future. But! hold on, it's not that simple. You can't just declare some classes and use them in another one, it's not that simple. There's a principle known as SOLID.
 SOLID is a set of five design principles for writing clean and maintainable object-oriented code:
+
 1. **S**ingle Responsibility Principle (SRP) – A class should have only one reason to change, meaning it should have only one job.
 2. **O**pen/Closed Principle (OCP) – Software entities should be open for extension but closed for modification.
 3. **L**iskov Substitution Principle (LSP) – Subtypes must be substitutable for their base types without altering correctness.
 4. **I**nterface Segregation Principle (ISP) – Clients should not be forced to depend on interfaces they do not use.
 5. **D**ependency Inversion Principle (DIP) – Depend on abstractions, not on concrete implementations.
 
-To explain more, there's a concept known as Composition which an alternative to Inheritance. Instead of creating rigid class hierarchies, composition allows objects to be built using smaller, reusable components, making modifications and extensions easier. 
+To explain more, there's a concept known as Composition which an alternative to Inheritance. Instead of creating rigid class hierarchies, composition allows objects to be built using smaller, reusable components, making modifications and extensions easier.
 It also avoids the fragile base class problem, where changes in a parent class can unintentionally break subclasses. By promoting behavior delegation rather than deep inheritance trees, composition aligns better with the Open/Closed Principle, leading to more scalable and adaptable software design.
 
 As an idea of what it might look like here are some code snippets:
+
 ```
 // pages/product/product.list.page.ts
 import { Page } from '@playwright/test';
@@ -90,6 +107,7 @@ export class ProductListPage {
   }
 }
 ```
+
 ```
 // pages/product/product.detail.page.ts
 import { Page } from '@playwright/test';
@@ -106,6 +124,7 @@ export class ProductDetailPage {
   }
 }
 ```
+
 ```
 // pages/product/product.create.page.ts
 import { Page } from '@playwright/test';
@@ -120,6 +139,7 @@ export class ProductCreatePage {
   }
 }
 ```
+
 ```
 // pages/product/product.filter.page.ts
 import { Page } from '@playwright/test';
@@ -177,7 +197,7 @@ test('Search and view product details', async ({ page }) => {
   await productPage.open();
   await productPage.list.searchForProduct('Laptop');
   await productPage.list.viewFirstProduct();
-  
+
   const title = await productPage.detail.getProductTitle();
   expect(title).toContain('Laptop');
 
