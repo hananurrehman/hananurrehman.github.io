@@ -124,7 +124,31 @@ const currentPath = Astro.url.pathname;
   const darkToggle = document.getElementById('darkToggle');
   const header = document.querySelector('header');
   const headerInner = header.querySelector('div');
+  const openMenu = document.getElementById('openMenu');
+  const closeMenu = document.getElementById('closeMenu');
+  const menu = document.getElementById('menu');
+  const mobileMenuBackground = document.getElementById('mobileMenuBackground');
   let lastScroll = 0;
+
+  // Mobile menu functionality
+  function openMobileMenu() {
+    menu.classList.remove('hidden');
+    closeMenu.classList.remove('hidden');
+    openMenu.classList.add('hidden');
+    mobileMenuBackground.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    menu.classList.add('hidden');
+    closeMenu.classList.add('hidden');
+    openMenu.classList.remove('hidden');
+    mobileMenuBackground.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  openMenu.addEventListener('click', openMobileMenu);
+  closeMenu.addEventListener('click', closeMobileMenu);
 
   // Handle scroll behavior
   window.addEventListener('scroll', () => {
