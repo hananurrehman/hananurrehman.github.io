@@ -1,7 +1,6 @@
 ---
-layout: ../../layouts/post.astro
 title: How to contribute to open source projects as a tester?
-description: Comprehensive guide for software testers to contribute to open source projects, including practical examples, step-by-step approaches, and real success stories from documentation to test automation.
+description: A practical guide for software testers to contribute to open source projects, from documentation to test automation, with real examples and success stories.
 dateFormatted: February 15, 2025
 pubDate: 15 February 2025 10:00:00 GMT
 tags:

@@ -1,7 +1,6 @@
 ---
-layout: ../../layouts/post.astro
 title: Using Chatgpt to test a module
-description: A detailed exploration of using ChatGPT for software testing, including real-world experiments, limitations, and insights on AI's current capabilities in test planning and automation.
+description: Real-world experiments with ChatGPT in software testing, focusing on test planning and automation, revealing current AI limitations.
 dateFormatted: October 10, 2023
 pubDate: 10 October 2023 10:00:00 GMT
 tags: ["AI Testing", "ChatGPT", "Test Automation", "Software Testing"]
