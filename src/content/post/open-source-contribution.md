@@ -60,3 +60,7 @@ It's still work in progress though, but as I said before, since this was a relat
 Rahul Parwal talks about this topic in detail in his video. Do check it out!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5KRaRYy_3c8?si=6BWouCH34d56M_XO&amp;start=306" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Update 19.04.2025, Ema-Abasi Effoing's article in MoT is also worth a read:
+
+<div class="iframely-embed"><div class="iframely-responsive" style="padding-bottom: 56.25%; padding-top: 120px;"><a href="https://www.ministryoftesting.com/articles/how-to-contribute-to-open-source-projects-as-a-software-tester" data-iframely-url="//iframely.net/z3WONyj"></a></div></div><script async src="//iframely.net/embed.js"></script>
